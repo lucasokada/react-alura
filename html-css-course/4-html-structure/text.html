@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>Buttons</title>
+    <!-- Os estilos do css também podem ser colocados em um arquivo diferente
+    para não misturar linguagens diferentes no mesmo arquivo.
+    Quando isso é feito, é preciso referenciar o css com a tag link-->
+    
+    <!-- <style>
+      p {
+    
+        font-family: Arial;
+      }
+      .video-title1 {
+        font-size: 30px;
+        font-weight: bold;
+        font-style: italic;
+        text-align: center;
+      }
+      
+      .video-title2 {
+        font-weight: bold;
+        font-size: 18px;
+        width: 300px;
+        line-height: 24px;
+        margin: 0;
+      }
+      
+      .video-stats {
+        font-family: Arieal;
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+        margin: 0;
+      }
+      
+      .video-author {
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+      }
+      
+      .video-description {
+        font-size: 14px;
+        color: rgb(96, 96, 96);
+        width: 280px;
+        line-height: 22px;
+      }
+      
+      .apple-text {
+        margin-bottom: 50px;
+        font-size: 14px;
+        color: white;
+        background-color: rgb(227, 64, 65);
+        padding: 20px 0 20px 0;
+        text-align: center;
+      }
+      
+      .shop-now:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style> -->
+    
+    <!-- link é uma tag especial que não precisa de tag de fechamento
+    Elementos como esse são chamados elementos void. 
+    Esse elemento recebe dois atributos, sendo o rel (relation), que
+    que diz qual o tipo da entidade que estamos relacionando. O outro
+    atributo é o href, onde se diz qual o arquivo referenciado.-->
+    <link rel="stylesheet" href="./buttons.css">
+    
+    <!-- Novas fontes pode ser encontradas em https://fonts.google.com/
+    Lá, é dado o código para baixar essas fontes no projeto. Basta adicionar
+    esse no header do html-->
+    <!-- Aqui, está sendo baixado a fonte de família Alumni.
+    Para usá-la, basta colocar sua font-family no css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap" rel="stylesheet">
+    
+  </header>
+  <body>
+    <p class="video-title2"> 
+      Talking Tech and AI with Google CEO Sundar Pichai!
+    </p>
+    
+    <p class="video-stats">
+      3.4M vies &#183; 6 months ago
+    </p>
+    
+    <p class="video-author">
+      Marques Brownlee &#10003;
+    </p>
+    
+    <p class="video-description">
+      Talking tech and AI on the heels of Google I/O.
+      Also a daily driver phone reveal from Google's CEO.
+      Shoutout to Sundar!
+    </p>
+    
+    <p class="apple-text">
+      Shop early for the best selection of holiday favourites. <span class="shop-now">Shop now &#62;</span>
+    </p>
+  </body>
+</html>

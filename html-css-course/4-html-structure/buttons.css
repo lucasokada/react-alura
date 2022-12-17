@@ -1,0 +1,50 @@
+p {
+  font-family: 'Alumni Sans Inline One';
+}
+.video-title1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.video-title2 {
+  font-weight: bold;
+  font-size: 18px;
+  width: 300px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.video-stats {
+  font-family: Arieal;
+  font-size: 14px;
+  color: rgb(96, 96, 96);
+  margin: 0;
+}
+
+.video-author {
+  font-size: 14px;
+  color: rgb(96, 96, 96);
+}
+
+.video-description {
+  font-size: 14px;
+  color: rgb(96, 96, 96);
+  width: 280px;
+  line-height: 22px;
+}
+
+.apple-text {
+  margin-bottom: 50px;
+  font-size: 14px;
+  color: white;
+  background-color: rgb(227, 64, 65);
+  padding: 20px 0 20px 0;
+  text-align: center;
+}
+
+.shop-now:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

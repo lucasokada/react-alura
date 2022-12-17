@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <title>my-yt</title>
+  <header>
+    <style>
+      .thumbnail {
+        /* mudando o width o height também é ajustado 
+          Colocando um height a imagem pode ficar deformada.
+        */
+        width: 300px;
+        /* height: 500px; */
+        
+        /*object-fit determina o que acontece se o size colocado
+          não corresponde a dimensão da imagem.
+            cover: imagem irá cobrir a dimensão colocada, mas mantendo o formato
+            contain: A imagem diminui até cubrir a dimensão colocada. Isso não significa que 
+            a imagem irá cobrir toda a área colocada. 
+        */
+        /* object-fit: cover; */
+        
+        /*object-position
+          right - ve o lado direito da imagem
+          left - ve o lado esquerdo da imagem
+          top e bottom
+        */
+        /* object-position: right; */
+        
+        height: 300px;
+        object-fit: contain;
+      }
+      
+      .search-bar {
+        font-size: 20px;
+        margin-left: 12px;
+      }
+    </style>
+  </header>
+  <body>
+    <!-- Elemento de imagem
+    É um elemento void, por isso não tem fechamento
+    src: determina qual a imagem que será mostrada. Funcional como o rel do atributo link
+  -->
+    <img class="thumbnail" src="thumb1.webp">
+    
+    <!-- text input são do tipo input
+      type: determinam o tipo de input, para textInput, o tipo é text
+      outros tipos são: checkbox, 
+      
+      placeholder: serve para colocar um placeholder no text box
+      
+    -->
+    <input class="search-bar" type="text" placeholder="search">
+    
+    <!-- Display Property:
+      1 - block element: ocupa a linha inteira
+      2 - inline block element: ocupa apenas o espaço que precisa
+      3 - inline element: aparece na mesma linha que um elemento
+      Os dois primeiros determinam como o elemento será mostrado na tela.
+    -->
+    
+    <!-- div é um componente de divisão. Esse é como se fosse uma caixa
+      
+    -->
+  </body>
+</html>

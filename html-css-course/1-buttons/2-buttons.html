@@ -1,0 +1,83 @@
+<!-- css2 -->
+<style>
+    .subscribe-button {
+        background-color: rgb(200, 0, 0);
+        color: white;
+        border: none;
+        height: 36px; /*px = pixels*/
+        width: 105px;
+        border-radius: 2px;
+        cursor: pointer; /*Muda o cursor para um pointer quando passar o 
+            mouse em cima desse componente*/   
+        margin-right: 8px; /*Adiciona espaçamento na direita*/
+    }
+
+    .join-button {
+        background-color: white;
+        border-color: rgb(41, 118, 211);
+        border-style: solid; /*Faz com que toda a borda tenha a mesma cor*/
+        border-width: 1px; /*Grossura da borda*/
+        color: rgb(41, 118, 211);
+        height: 36px;
+        width: 62px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    .tweet-button {
+        background-color: rgb(2, 137, 255);
+        color: white;
+        border: none;
+        height: 36px;
+        width: 75px;
+        border-radius: 18px;
+        font-weight: bold; /*Coloca fonte em negrito*/
+        font-size: 15px;
+        cursor: pointer;
+        margin-left: 8px;
+    }
+
+    
+</style> 
+
+<!-- css1 -->
+<!-- <style>
+    button {
+        background-color: rgb(200, 0, 0);
+        color: white;
+        border: none;
+        height: 36px; /*px = pixels*/
+        width: 105px;
+        border-radius: 2px;
+        cursor: pointer; /*Muda o cursor para um pointer quando passar o 
+            mouse em cima desse componente*/
+        
+        
+    }
+</style> -->
+
+<!-- É um elemento único que não aparece na página.
+    Ou seja, não cria nenhum componente na tela.
+    Esse é usado para estilização, sendo possível
+    escrever códigos CSS dentro desse.
+-->
+
+<!-- Sintaxe do css:
+    button -> Css Selector. Determina qual o elemento css estilziado
+        Isso afeta todos os botões da página
+    background-color -> Css Property.
+    red -> Css value
+
+    Então, essas também servem como instruções para que os componentes
+    sejam estilizados.
+-->
+
+<button class="subscribe-button">SUBSCRIBE</button>
+
+<!-- No caso, o css acima afetará todos os botões da página. por isso,
+é importante utilizar o atributo class, estilizando apenas elementos 
+pertencentes a essa class em vez de "button", seria ".subscribe-button" -->
+
+<button class="join-button">JOIN</button>
+
+<button class="tweet-button">Tweet</button>

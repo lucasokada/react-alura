@@ -1,0 +1,111 @@
+<!-- css2 -->
+<style>
+    .subscribe-button {
+        background-color: rgb(200, 0, 0);
+        color: white;
+        border: none;
+        height: 36px;
+        width: 105px;
+        border-radius: 2px;
+        cursor: pointer;   
+        margin-right: 8px;
+        
+        /*
+        Realiza efeitos de transição. Recebe dois valores:
+        1-Qual a transição desejada
+        2-Tempo da transição
+        
+        */
+        transition: opacity 0.15s;
+    }
+    
+    /*
+    Estilo aplicado quando o cursor estiver em ciam do elemento
+    Se não ocorrer o hover no botão, o estilo .subscribe-button é aplicado
+    */
+    .subscribe-button:hover {
+        /*
+        Esse :hover é uma pseudo-classe. Essa adiciona estilos extra em
+        determinada situação
+        */
+        
+        /* background-color: green;  */
+        
+        /*
+        Opacidade define o quanto é possível ver através de um elemento.
+        Recebe um valor entre 0 e 1
+        */
+        opacity: 0.8; 
+    }
+    
+    .subscribe-button:active {
+        /*
+        Esse :active é outra pseudo-classe. Essa é aplicada quando o botão é
+        clicado
+        */
+        
+        /* background-color: blue; */
+        
+        opacity: 0.5; 
+    }
+    
+    .join-button {
+        background-color: white;
+        border-color: rgb(41, 118, 211);
+        border-style: solid;
+        border-width: 1px;
+        color: rgb(41, 118, 211);
+        height: 36px;
+        width: 62px;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: background-color 1s,
+            color 1s;
+    }
+    
+    .join-button:hover {
+        background-color: rgb(41, 118, 211);
+        color: white
+    }
+    
+    .join-button:active {
+        opacity: 0.7;
+    }
+
+    .tweet-button {
+        background-color: rgb(2, 137, 255);
+        color: white;
+        border: none;
+        height: 36px;
+        width: 75px;
+        border-radius: 18px;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+        margin-left: 8px;
+        transition: box-shadow 0.15s;
+
+    }
+    
+    .tweet-button:hover {
+        /*
+        As sombras/shadows são outra propriedade css.
+        Recebe 4 valores:
+        1 - determina a posição horizonteal do shadow
+        2 - determina a posição vertical do shadow
+        3 - determina o blur
+        4 - cor da sombra
+        */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+        /*o rgba funciona como um rgb normal, com a diferença de ter
+        um valor 'a' a mais. Esse determina a opacidade da cor.*/
+    }
+
+    
+</style> 
+
+<button class="subscribe-button">SUBSCRIBE</button>
+
+<button class="join-button">JOIN</button>
+
+<button class="tweet-button">Tweet</button>

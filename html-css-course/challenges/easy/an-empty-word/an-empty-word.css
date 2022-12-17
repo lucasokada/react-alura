@@ -1,0 +1,6 @@
+.box {
+  background-color: red;
+  content: "Hello World";
+  text-transform: uppercase;
+  
+}
