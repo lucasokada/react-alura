@@ -20,3 +20,8 @@ export const Thing: FC<Props> = ({ children }) => {
 };
 
 export * from './components/AbBotao'
+
+/*
+  semantic versioning: 
+  https://docs.npmjs.com/about-semantic-versioning
+*/
