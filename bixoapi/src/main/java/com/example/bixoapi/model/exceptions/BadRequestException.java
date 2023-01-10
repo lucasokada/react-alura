@@ -1,2 +1,7 @@
-package com.example.bixoapi.model.exceptions;public class BadRequestException {
+package com.example.bixoapi.model.exceptions;
+
+public class BadRequestException extends RuntimeException {
+  public BadRequestException(String message) {
+    super(message);
+  }
 }
