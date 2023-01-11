@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { TCategoria } from 'types/categoria'
 import { RootState } from 'store'
+import Button from 'components/Button'
 
 const Home = () => {
   const navigate = useNavigate()
@@ -17,7 +18,11 @@ const Home = () => {
         descricao='Compre diversos tipos de produtos no melhor site do Brasil!'
         classname={styles.header}
         imagem={relogio}
-      />
+      >
+        <Button onClick={() => navigate('/anuncie')}>
+          Quer anunciar
+        </Button>
+      </Header>
       <div className={styles.categorias}>
         <div className={styles['categorias-title']}>
           <h1>

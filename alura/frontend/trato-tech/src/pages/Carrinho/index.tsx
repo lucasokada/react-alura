@@ -5,6 +5,7 @@ import { RootState } from 'store'
 import Item from 'components/Item/Item'
 import { Item as TItem } from 'types/itens'
 import { resetarCarrinho } from 'store/reducers/carrinho'
+import Button from 'components/Button'
 
 interface SelectorResult {
   carrinho: TItem[]
@@ -31,7 +32,6 @@ const Carrinho = () => {
     return {carrinho, total}
   })
   
-  console.log(carrinho)
   
   return (
     <div>
@@ -48,12 +48,11 @@ const Carrinho = () => {
           <span>
             SubTotal: <strong>R$ {total.toFixed(2)}</strong>
           </span>
-          <button
-            className={styles.finalizar}
+          <Button
             onClick={() => dispatch(resetarCarrinho()) }
           >
             Finalizar Compra
-          </button>
+          </Button>
         </div>
       </div>
     </div>

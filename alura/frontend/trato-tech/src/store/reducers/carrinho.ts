@@ -17,7 +17,6 @@ const carrinhoSlice = createSlice({
     
     mudarQuantidade: (state, params) => {
       state = state.map(itemNoCarrinho => {
-        console.log('em state = ', itemNoCarrinho.quantidade)
         if(itemNoCarrinho.id === params.payload.id) {
           itemNoCarrinho.quantidade += params.payload.quantidade
         }

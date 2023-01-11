@@ -238,9 +238,43 @@ const itensSlice = createSlice({
         if(item.id === params.payload) item.favorito = !item.favorito
         return item
       })
+    },
+    
+    cadastrarItem: (state, params) => {
+      state.push({...params.payload, id: uuid()})
+    },
+    
+    reset: () => {
+      return initialState
+    },
+    
+    mudarItem: (state, params) => {
+      //forma 1
+      // return state.map(item => {
+      //   if(item.id === params.payload.id) item = {...item, ...params.payload.item}
+      //   return item
+      // })
+      
+      //forma 2
+      // state.map(item => {
+      //   if(item.id === params.payload.id) Object.assign(item, params.payload.item)
+      //   return item
+      // })
+      
+      const index = state.findIndex(item => item.id === params.payload.id)
+      Object.assign(state[index], params.payload.novoItem)
+    },
+    
+    deletarItem: (state, params) => {
+      // let index = state.findIndex(item => item.id === params.payload.id)
+      // let newState = [...state.slice(0, index - 1), ...state.slice(index + 1, state.length - 1)]
+      // return newState
+      
+      const index = state.findIndex(item => item.id === params.payload.id)
+      state.splice(index, 1)
     }
   }
 })
 
-export const {mudarFavorito} = itensSlice.actions
+export const {mudarFavorito, cadastrarItem, reset, mudarItem, deletarItem} = itensSlice.actions
 export default itensSlice.reducer
