@@ -4,12 +4,28 @@ import relogio from 'assets/inicial.png'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { TCategoria } from 'types/categoria'
-import { RootState } from 'store'
+import { AppDispatch, RootState } from 'store'
 import Button from 'components/Button'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { buscarCategorias, resetCategorias } from 'store/reducers/categorias'
+import {buscarItens} from 'store/reducers/itens'
+import { resetItems } from 'store/reducers/itens'
 
 const Home = () => {
   const navigate = useNavigate()
   const categorias = useSelector<RootState, TCategoria[]>(state => state.categorias)
+  const dispatch = useDispatch<AppDispatch>()
+  
+  // useEffect(() => {
+  //   dispatch(resetCategorias())
+  //   dispatch(resetItems())
+  // })
+  
+  useEffect(() => {
+    dispatch(buscarCategorias())
+    dispatch(buscarItens())
+  }, [dispatch])
   
   return (
     <div>

@@ -6,6 +6,9 @@ import {persistReducer, persistStore} from 'redux-persist'
 import carrinho from './reducers/carrinho'
 import busca from './reducers/busca'
 
+//adicionado. Resolve erro no dispatch das actions externas
+export type AppDispatch = typeof store.dispatch;
+
 //redux persist
 const persistConfig = {
   key: 'root',
