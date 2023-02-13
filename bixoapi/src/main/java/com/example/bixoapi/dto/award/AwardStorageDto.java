@@ -10,19 +10,22 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class AwardStorageDto {
-  @NotBlank
   @Min(1)
   @Max(7)
-  public Integer awardNumber;
+  public int awardNumber;
 
   @NotBlank
   public String result;
+
+  @NotBlank
+  public String gameResultId;
 
   public Award toDomain() {
     return new Award(
       null,
       awardNumber,
-      result
+      result,
+      gameResultId
     );
   }
 }

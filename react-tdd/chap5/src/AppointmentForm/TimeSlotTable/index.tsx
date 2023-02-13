@@ -9,9 +9,10 @@ interface Props {
   salonClosesAt: number,
   today: Date,
   availableTimeSlot: AvailableTime[]
+  checkedTimeSlot: number
 }
 
-const TimeSlotTable = ({salonOpensAt, salonClosesAt, today, availableTimeSlot}: Props) => {
+const TimeSlotTable = ({salonOpensAt, salonClosesAt, today, availableTimeSlot, checkedTimeSlot}: Props) => {
   const timeIncrements = (numTimes: number, startTime: number, increment: number): Array<number> => {
     const allTimes = new Array<number>(numTimes)
     const incrementedTimes = allTimes.fill(startTime).map((time, i) => time + increment * i)
@@ -65,6 +66,7 @@ const TimeSlotTable = ({salonOpensAt, salonClosesAt, today, availableTimeSlot}: 
                       availableTimeSlots={availableTimeSlot}
                       date={date}
                       timeSlot={timeSlot}
+                      checkedTimeSlot={checkedTimeSlot}
                     />
                   }
                 </td>

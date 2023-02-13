@@ -8,12 +8,14 @@ interface Props {
   availableTimeSlots: AvailableTime[]
   date: number
   timeSlot: number
+  checkedTimeSlot: number
 }
 
 const RadioButtonIfAvailable = ({
   availableTimeSlots,
   date,
-  timeSlot
+  timeSlot,
+  checkedTimeSlot
 }: Props) => {
   
   const mergeDateAndTime = (date: number, timeSlot: number) => {
@@ -29,11 +31,13 @@ const RadioButtonIfAvailable = ({
   const startsAt = mergeDateAndTime(date, timeSlot)
   
   if(availableTimeSlots.some((timeSlot) => timeSlot.startsAt === startsAt)) {
+    const isChecked = startsAt === checkedTimeSlot
     return (
       <input
         name='startsAt'
         type='radio'
         value={startsAt}
+        checked={isChecked}
       />
     )
   }

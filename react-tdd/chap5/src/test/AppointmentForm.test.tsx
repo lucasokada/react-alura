@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import AppointmentForm from '../AppointmentForm'
+import AppointmentForm, { Service } from '../AppointmentForm'
 import { element, elements } from './utils/reactTestExtensions'
 
 describe('AppointmentForm', () => {
@@ -55,7 +55,7 @@ describe('AppointmentForm', () => {
     
     it('pre-selects the existing value', () => {
       const services = ['Cut', 'Blow-dry']
-      const appointment = {service: 'Blow-dry'}
+      const appointment = {service: 'Blow-dry', startsAt: 0}
       render(
         <AppointmentForm 
           selectableServices={services}
@@ -69,6 +69,22 @@ describe('AppointmentForm', () => {
   })
   
   describe('time slot table', () => {
+    const oneDayInMs = 24 * 60 * 60 * 1000
+    const today = new Date()
+    const tomorrow = new Date(today.getTime() + oneDayInMs)
+    const availableTimeSlots = [
+      {startsAt: today.setHours(9, 0, 0, 0)},
+      {startsAt: today.setHours(9, 30, 0, 0)},
+      {startsAt: tomorrow.setHours(9, 30, 0, 0)}
+    ]
+    
+    const startsAtField = (index: number) => {
+      const nodes = elements('input[name=startsAt]')[index]
+      console.log(nodes)
+      
+      return nodes as HTMLInputElement
+    }
+    
     it('renders a table for time slots with an id', () => {
       render(<AppointmentForm />)
       expect(element('table#time-slots')).not.toBeNull()
@@ -116,14 +132,6 @@ describe('AppointmentForm', () => {
     })
     
     it('renders radio buttons in the corret table cell', () => {
-      const oneDayInMs = 24 * 60 * 60 * 1000
-      const today = new Date()
-      const tomorrow = new Date(today.getTime() + oneDayInMs)
-      const availableTimeSlots = [
-        {startsAt: today.setHours(9, 0, 0, 0)},
-        {startsAt: today.setHours(9, 30, 0, 0)},
-        {startsAt: tomorrow.setHours(9, 30, 0, 0)}
-      ]
       
       render(
         <AppointmentForm 
@@ -150,14 +158,7 @@ describe('AppointmentForm', () => {
     })
     
     it('sets radio button valoues to the startsAt value of the corresponding appointment', () => {
-      const oneDayInMs = 24 * 60 * 60 * 1000
-      const today = new Date()
-      const tomorrow = new Date(today.getTime() + oneDayInMs)
-      const availableTimeSlots = [
-        {startsAt: today.setHours(9, 0, 0, 0)},
-        {startsAt: today.setHours(9, 30, 0, 0)},
-        {startsAt: tomorrow.setHours(9, 30, 0, 0)}
-      ]
+
       
       render(
         <AppointmentForm 
@@ -171,9 +172,23 @@ describe('AppointmentForm', () => {
       const allRadioValues = Array.from(elements('input[type=radio]')).map(element => parseInt(element.getAttribute('value') ?? ''))
       const allSlotTimes = availableTimeSlots.map(element => element.startsAt)
       
-      console.log('allRadioValues = ', allRadioValues)
-      
       expect(allRadioValues).toEqual(allSlotTimes)
+    })
+    
+    it('pre-selects the existing value', () => {
+      const appointment = {
+        startsAt: availableTimeSlots[1].startsAt
+      }
+      
+      render(
+        <AppointmentForm
+          original={{service: '', startsAt: appointment.startsAt}}
+          availableTimeSlots={availableTimeSlots}
+          today={today}
+        />
+      )
+      
+      expect(startsAtField(1).checked).toEqual(true)
     })
   })
 })

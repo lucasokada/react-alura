@@ -3,6 +3,8 @@ package com.example.bixoapi.model.utils;
 import com.example.bixoapi.model.exceptions.InvalidGameResultException;
 import com.example.bixoapi.model.exceptions.ResultTagNotFoundException;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,27 @@ public class GameResultExtractor {
     this.columnNumber = columnNumber;
   }
 
+  public LocalDate extractGameDate() {
+    final int dateLength = 10;
+    final String gameDate = "";
+    final String resultTag = "<time datetime=\"";
+    final int indexOfResultTag = requestBody.indexOf(resultTag);
+
+    if(indexOfResultTag != -1) {
+      final int resultBeginIndex = indexOfResultTag + resultTag.length();
+      final int resulEndIndex = resultBeginIndex + dateLength;
+      String[] gameResult = requestBody.substring(resultBeginIndex, resulEndIndex).split("-");
+      final LocalDate date = LocalDate.of(
+        Integer.parseInt(gameResult[0]),
+        Integer.parseInt(gameResult[1]),
+        Integer.parseInt(gameResult[2])
+      );
+
+      return date;
+    } else {
+      throw new ResultTagNotFoundException("ResultTagNotFoundException occurred. HTML result tag not found");
+    }
+  }
 
   private String extractResult() {
     final String invalidResult = "0000-0";

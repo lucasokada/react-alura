@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import TimeSlotTable from './TimeSlotTable'
 
-type Service = {
+export type Service = {
   service: string
+  startsAt: number
 }
 
 type AvailableTime = {
@@ -19,7 +21,7 @@ interface Props {
 
 const AppointmentForm = ({
   selectableServices = [], 
-  original = {service: ''},
+  original = {service: '', startsAt: 0},
   salonOpensAt = 0,
   salonClosesAt = 0,
   today = new Date(),
@@ -37,7 +39,13 @@ const AppointmentForm = ({
           <option key={service}>{service}</option>
         ))}
       </select>
-      <TimeSlotTable salonOpensAt={salonOpensAt} salonClosesAt={salonClosesAt} today={today} availableTimeSlot={availableTimeSlots}/>
+      <TimeSlotTable 
+        salonOpensAt={salonOpensAt} 
+        salonClosesAt={salonClosesAt} 
+        today={today} 
+        availableTimeSlot={availableTimeSlots} 
+        checkedTimeSlot={original.startsAt}
+      />
     </form>
   )
 }

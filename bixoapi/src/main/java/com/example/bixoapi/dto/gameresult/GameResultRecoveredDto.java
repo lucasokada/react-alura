@@ -18,7 +18,7 @@ import java.util.List;
 @ToString
 public class GameResultRecoveredDto {
   @NotBlank
-  public Long id;
+  public String id;
   @NotBlank
   public LocalDateTime gameDate;
   @NotBlank
@@ -26,7 +26,7 @@ public class GameResultRecoveredDto {
 
   private List<AwardRecoveredDto> domainAwardListToDto(List<Award> awards) {
     List<AwardRecoveredDto> convertedAwards = new ArrayList<>();
-    awards.stream().map(domainAward -> convertedAwards.add(new AwardRecoveredDto(domainAward)));
+    awards.forEach(domainAward -> convertedAwards.add(new AwardRecoveredDto(domainAward)));
     return convertedAwards;
   }
 

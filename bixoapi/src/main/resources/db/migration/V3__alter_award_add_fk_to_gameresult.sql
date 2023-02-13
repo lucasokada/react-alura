@@ -1,1 +1,1 @@
-alter table award add constraint AWARD_GAMERESULT_FK foreign key (gameResult) references gameresult(id);
+alter table award add constraint AWARD_GAMERESULT_FK foreign key (game_result_id) references game_result(id);

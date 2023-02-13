@@ -1,0 +1,93 @@
+.headerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #131921;
+  
+  p strong {
+    background-color: #131921;
+  }
+  
+  div {
+    background-color: inherit;  
+  }
+  
+  &-textInput {
+    width: 65%;
+    display: content;
+  }
+}
+
+.logo {
+  width: 150px;
+  height: 50px;
+}
+
+.headerButtonContainer {
+  display: inline-flex;
+  button {
+    margin: 0 10px;
+  }
+  
+  p {
+    font-size: 12px;
+  }
+}
+
+.locationButtonContent {
+  div {
+    display: inline-block;
+  }
+}
+
+.cartButtonContainer {
+  display: inline-flex;
+  &-content { 
+    display: block;
+    
+    p {
+      position: relative;
+      top: 10px;
+      font-size: 16px;
+    }
+  }
+  
+  p {
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.buttonContainer {
+  padding: 10px;
+  background-color: #232F3E;
+  
+  div {
+    display: inline-block;
+    background-color: inherit;
+  }
+  
+  &-leftButtons {
+    width: 70%;
+    * {
+      margin: 0 10px
+    }
+  }
+  
+  &-rightButtons {
+    width: 30%;
+    text-align: end;
+  }
+}
+
+.modalContainer {
+  display: inline-grid;
+  margin-left: 30px;
+  
+  div {
+    display: inline-grid;
+  }
+}

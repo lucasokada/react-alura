@@ -19,6 +19,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,30 +31,27 @@ public class GameResultStorageDto {
   public List<AwardStorageDto> awards;
 
   private LocalTime getGameResultHour(int dateIndicator) {
-    switch (dateIndicator) {
-      case 1:
-        return LocalTime.of(11, 0);
-      case 2:
-        return LocalTime.of(14, 0);
-      case 3:
-        return LocalTime.of(16, 0);
-      case 4:
-        return LocalTime.of(18, 0);
-      case 5:
-        return LocalTime.of(21, 0);
-    }
-
-    return LocalTime.now();
+    return switch (dateIndicator) {
+      case 1 -> LocalTime.of(11, 0);
+      case 2 -> LocalTime.of(14, 0);
+      case 3 -> LocalTime.of(16, 0);
+      case 4 -> LocalTime.of(18, 0);
+      case 5 -> LocalTime.of(21, 0);
+      default -> LocalTime.now();
+    };
   }
 
-  public GameResultStorageDto(int dateIndicator) {
-    LocalDate todayDate = LocalDate.now();
+  public String getId() {
+    return UUID.nameUUIDFromBytes(this.gameDate.toString().getBytes()).toString();
+  }
+
+  public GameResultStorageDto(int dateIndicator, LocalDate gameDate) {
     LocalTime time = getGameResultHour(dateIndicator);
 
     this.gameDate = LocalDateTime.of(
-      todayDate.getYear(),
-      todayDate.getMonth(),
-      todayDate.getDayOfMonth(),
+      gameDate.getYear(),
+      gameDate.getMonth(),
+      gameDate.getDayOfMonth(),
       time.getHour(),
       time.getMinute()
     );
@@ -63,10 +61,9 @@ public class GameResultStorageDto {
   public GameResult toDomain() {
     List<Award> domainAwards = new ArrayList<>();
 
-    awards.stream().map(awardDto -> domainAwards.add(awardDto.toDomain()));
+    awards.forEach(awardDto -> domainAwards.add(awardDto.toDomain()));
 
     return new GameResult(
-      null,
       gameDate,
       domainAwards
     );

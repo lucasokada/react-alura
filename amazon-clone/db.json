@@ -1,0 +1,69 @@
+{
+  "categories": [
+    {
+      "name": "Todos"
+    },
+    {
+      "name": "Dispositivos Amazon e Acessórios"
+    },
+    {
+      "name": "Alimentos e Bebidas"
+    },
+    {
+      "name": "Automotivo"
+    },
+    {
+      "name": "Bebês"
+    },
+    {
+      "name": "Beleza"
+    },
+    {
+      "name": "Brinquedos e Jogos"
+    },
+    {
+      "name": "Casa"
+    },
+    {
+      "name": "Cozinha"
+    },
+    {
+      "name": "Cuidados Pessoais e Limpeza"
+    },
+    {
+      "name": "CD e Vinil"
+    },
+    {
+      "name": "DVD e Blu-ray"
+    },
+    {
+      "name": "Eletrônicos e Celulares"
+    },
+    {
+      "name": "Esportes e Aventura"
+    },
+    {
+      "name": "Ferramentas e construção"
+    },
+    {
+      "name": "Informática"
+    },
+    {
+      "name": "Jardim e Piscina"
+    }
+  ],
+  "userInfo": [{
+    "login": "lucas.okada2000@gmail.com",
+    "password": "leiki",
+    "name": "Lucas Eiki Okada",
+    "city": "Matão",
+    "cep": "15991278"
+  },
+  {
+    "login": "teste@gmail.com",
+    "password": "teste",
+    "name": "User Teste",
+    "city": "São Paulo",
+    "cep": "12391577"
+  }]
+}

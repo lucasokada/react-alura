@@ -1,0 +1,15 @@
+.headerButton {
+  color: #FFFFFF;
+  background-color: inherit;
+  border: 0;
+  padding: 2px;
+  
+  &:hover {
+    border: 1px solid #FFFFFF;
+  }
+  
+  * {
+    margin: 0;
+    background-color: inherit;
+  }
+}
